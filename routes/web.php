@@ -16,3 +16,9 @@ Route::get('/', function () {
         ->with('title', 'The Foldagram')
         ->with('class', 'home');
 });
+
+Route::get('/about', function () {
+    return view('about')
+        ->with('title','About Foldagram')
+        ->with('class','about');
+});
