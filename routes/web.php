@@ -38,3 +38,7 @@ Route::post('/subscribe', function () {
     \App\Subscribers::create($input);
     return Redirect::to('/')->with('success', 'Thanks for signing Up Foldagram.');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
