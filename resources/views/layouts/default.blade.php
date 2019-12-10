@@ -15,8 +15,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/flexslider.min.css"/>
 
     <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
-    {{--    {{ HTML::style('css'/slider.css') }}--}}
-    {{--    {{ HTML::script('js'/slider.js') }}s--}}
 </head>
 <body class="{{ $class }}">
 <div class="container">
@@ -65,7 +63,7 @@
                 </ul>
             </div>
         @endif
-        
+
         @if (Session::has('success'))
             <div class="error_message alert alert-success alert-dismissible" role="alert">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span>
@@ -86,7 +84,7 @@
         <div class="span8 footer-menu">
             <ul>
                 {{--                <li>{{ link_to_route('contact', 'Contact') }}</li>--}}
-                {{--                <li>{{ link_to_route('about', 'About Us') }}</li>--}}
+                                <li>{{ link_to_route('about', 'About Us') }}</li>
                 {{--                <li>{{ link_to_route('login', 'Log In') }}</li>--}}
                 {{--                <li>{{ link_to_route('register', 'Register') }}</li>--}}
             </ul>

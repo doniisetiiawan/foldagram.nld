@@ -23,7 +23,7 @@ Route::get('/about', function () {
     return view('about')
         ->with('title', 'About Foldagram')
         ->with('class', 'about');
-});
+})->name('about');
 
 Route::post('/subscribe', function () {
     $input      = InputAlias::all();
