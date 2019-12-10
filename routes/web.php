@@ -12,5 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home')
+        ->with('title', 'The Foldagram')
+        ->with('class', 'home');
 });
