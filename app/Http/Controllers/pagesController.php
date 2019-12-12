@@ -16,7 +16,7 @@ class pagesController extends Controller
             ->with('class', 'myaccount');
     }
 
-    function postProfile()
+    public function postProfile()
     {
         $rules = array(
             'email' => 'required|email|unique:users,email',
@@ -43,7 +43,7 @@ class pagesController extends Controller
         }
     }
 
-    function changepassword()
+    public function changepassword()
     {
         $rules = array(
             'old_password'          => 'required',
