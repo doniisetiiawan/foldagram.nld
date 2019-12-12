@@ -42,3 +42,8 @@ Route::post('/subscribe', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::prefix('myaccount')->middleware(['middleware' => 'auth'])->group(function () {
+    Route::get('/', [\App\Http\Controllers\pagesController::class, 'Myaccount'])->name('myaccount');
+    Route::post('/profile', [\App\Http\Controllers\pagesController::class, 'postProfile']);
+});

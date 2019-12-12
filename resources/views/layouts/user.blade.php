@@ -33,7 +33,14 @@
 
                 @if(Auth::check())
                     <li></li>
-                    <li>{{ link_to_route('frontlogout', 'Logout') }}</li>
+                    <li>
+                        <a href="{{ route('logout') }}"
+                           onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            Logout </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="GET"
+                              style="display: none;"> {{ csrf_field() }} </form>
+                    </li>
                 @else
                     <li>{{ link_to_route('login', 'Login') }}</li>
                     <li>{{ link_to_route('register', 'Register') }}</li>
@@ -53,6 +60,28 @@
     @yield('inner-banner')
 
     <div class="row-fluid content">
+
+        @if (Session::has('success') )
+            <div class="span6 alert alert-success">
+                {{ Session::get('success') }}
+            </div>
+        @endif
+        
+        @if (Session::has('error') )
+            <div class="span6 alert alert-error">
+                {{ Session::get('error') }}
+            </div>
+        @endif
+
+        @if ($errors->any())
+            <div class="span6 alert alert-error">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li class="error">{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
 
         @yield('content')
 
