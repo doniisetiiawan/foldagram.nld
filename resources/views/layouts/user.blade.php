@@ -49,29 +49,28 @@
                                                                                src="{{ URL::to('/') }}/img/img_trans.png"/></a>
         </div>
     </div>
-</div>
 
-@yield('inner-banner')
+    @yield('inner-banner')
 
-<div class="row-fluid content">
+    <div class="row-fluid content">
 
-    @yield('content')
+        @yield('content')
 
-</div>
-<div class="row-fluid footer">
-    <div class="span8 footer-menu">
-        <ul>
-            {{--                <li>{{ link_to_route('contact', 'Contact') }}</li>--}}
-            <li>{{ link_to_route('about', 'About Us') }}</li>
-            {{--                <li>{{ link_to_route('login', 'Log In') }}</li>--}}
-            {{--                <li>{{ link_to_route('register', 'Register') }}</li>--}}
-        </ul>
     </div>
-    <div class="span4 copyright">
-        <h4>Foldagram is patent pending</h4>
-        <p>&copy;Copyright All Encompassing Productions llc, 2012</p>
+    <div class="row-fluid footer">
+        <div class="span8 footer-menu">
+            <ul>
+                {{--                <li>{{ link_to_route('contact', 'Contact') }}</li>--}}
+                <li>{{ link_to_route('about', 'About Us') }}</li>
+                {{--                <li>{{ link_to_route('login', 'Log In') }}</li>--}}
+                {{--                <li>{{ link_to_route('register', 'Register') }}</li>--}}
+            </ul>
+        </div>
+        <div class="span4 copyright">
+            <h4>Foldagram is patent pending</h4>
+            <p>&copy;Copyright All Encompassing Productions llc, 2012</p>
+        </div>
     </div>
-</div>
 </div><!-- End Container -->
 
 @include('foldagram')

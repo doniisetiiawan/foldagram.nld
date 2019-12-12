@@ -85,7 +85,7 @@
             <ul>
                 {{--                <li>{{ link_to_route('contact', 'Contact') }}</li>--}}
                                 <li>{{ link_to_route('about', 'About Us') }}</li>
-                {{--                <li>{{ link_to_route('login', 'Log In') }}</li>--}}
+                                <li>{{ link_to_route('login', 'Log In') }}</li>
                                 <li>{{ link_to_route('register', 'Register') }}</li>
             </ul>
         </div>
