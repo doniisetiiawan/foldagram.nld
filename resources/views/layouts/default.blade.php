@@ -25,11 +25,23 @@
         <div class="span6 menu">
             <ul>
                 <li><a href="#popup" data-toggle="modal">Create Foldagram</a></li>
-                {{--                <li>{{ link_to_route('pcredit', 'Purchase Credits') }}</li>--}}
+                                <li>{{ link_to_route('pcredit', 'Purchase Credits') }}</li>
                 {{--                <li>{{ link_to_route('cart', 'Cart') }}</li>--}}
                 {{--                <li>{{ link_to_route('contact', 'Contact') }}</li>--}}
-                {{--                <li>{{ link_to_route('userlogin', 'Login') }}</li>--}}
-                                <li>{{ link_to_route('register', 'Register') }}</li>
+
+                @if(Auth::check())
+                    <li>
+                        <a href="{{ route('logout') }}"
+                           onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            Logout </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="GET"
+                              style="display: none;"> {{ csrf_field() }} </form>
+                    </li>
+                @else
+                    <li>{{ link_to_route('login', 'Login') }}</li>
+                    <li>{{ link_to_route('register', 'Register') }}</li>
+                @endif
             </ul>
         </div>
         <div class="span2 social">

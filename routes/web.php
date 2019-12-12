@@ -48,3 +48,6 @@ Route::prefix('myaccount')->middleware(['middleware' => 'auth'])->group(function
     Route::post('/profile', [\App\Http\Controllers\pagesController::class, 'postProfile']);
     Route::post('/changepassword', [\App\Http\Controllers\pagesController::class, 'changepassword']);
 });
+
+Route::get('purchasecredit', [\App\Http\Controllers\pagesController::class, 'get_purchase_credit'])->name('pcredit');
+Route::post('price/{value}', [\App\Http\Controllers\pagesController::class, 'price']);

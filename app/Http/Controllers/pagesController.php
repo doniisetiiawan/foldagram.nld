@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Credit;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
@@ -70,6 +71,31 @@ class pagesController extends Controller
             return \Redirect::to('myaccount')->with('success', 'Your password  has been updated successfully.');
         } else {
             return \Redirect::to('myaccount')->with('error', 'Your password has been not update successfully.');
+        }
+    }
+
+    public function get_purchase_credit()
+    {
+        $credit = Credit::all();
+
+        return view("pages.purchase_credit")
+            ->with("title", "The Foldagram - Purchase Credit")
+            ->with("page_title", "Purchase Credit")
+            ->with('class', 'pcredit')
+            ->with('credit', $credit);
+    }
+
+    public function price($qty)
+    {
+        $credit = Credit::where('rfrom', '<=', intval($qty))
+            ->where('rto', ">=", intval($qty))
+            ->orderBy('rfrom', 'DESC')
+            ->first();
+
+        if ($credit) {
+            return $credit->price;
+        } else {
+            return 0;
         }
     }
 }

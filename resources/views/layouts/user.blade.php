@@ -30,9 +30,8 @@
         <div class="span6 menu">
             <ul>
                 <li><a href="#popup" data-toggle="modal">Create Foldagram</a></li>
-
+                <li>{{ link_to_route('pcredit', 'Purchase Credits') }}</li>
                 @if(Auth::check())
-                    <li></li>
                     <li>
                         <a href="{{ route('logout') }}"
                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
