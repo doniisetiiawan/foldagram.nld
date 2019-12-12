@@ -41,6 +41,35 @@ class pagesController extends Controller
         } else {
             return \Redirect::to('myaccount')->with('error', 'Something went wrong!.');
         }
+    }
 
+    function changepassword()
+    {
+        $rules = array(
+            'old_password'          => 'required',
+            'password'              => 'required|different:old_password|confirmed',
+            'password_confirmation' => 'required',
+        );
+
+        $input      = Input::all();
+        $validation = \Validator::make($input, $rules);
+
+        if ($validation->fails()) {
+            return \Redirect::to('myaccount')->withInput()->withErrors($validation);
+        }
+
+        $password_verify = password_verify(Input::get('old_password'), \Auth::user()->getAuthPassword());
+        if (!$password_verify) {
+            return \Redirect::to('myaccount')->with('error', 'Your old password is not matching with your provided input.');
+        }
+
+        $user           = User::find(\Auth::user()->id);
+        $user->password = \Hash::make(Input::get('password'));
+
+        if ($user->save()) {
+            return \Redirect::to('myaccount')->with('success', 'Your password  has been updated successfully.');
+        } else {
+            return \Redirect::to('myaccount')->with('error', 'Your password has been not update successfully.');
+        }
     }
 }

@@ -66,7 +66,7 @@
                 {{ Session::get('success') }}
             </div>
         @endif
-        
+
         @if (Session::has('error') )
             <div class="span6 alert alert-error">
                 {{ Session::get('error') }}
