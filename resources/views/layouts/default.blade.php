@@ -29,7 +29,7 @@
                 {{--                <li>{{ link_to_route('cart', 'Cart') }}</li>--}}
                 {{--                <li>{{ link_to_route('contact', 'Contact') }}</li>--}}
                 {{--                <li>{{ link_to_route('userlogin', 'Login') }}</li>--}}
-                {{--                <li>{{ link_to_route('register', 'Register') }}</li>--}}
+                                <li>{{ link_to_route('register', 'Register') }}</li>
             </ul>
         </div>
         <div class="span2 social">
@@ -86,7 +86,7 @@
                 {{--                <li>{{ link_to_route('contact', 'Contact') }}</li>--}}
                                 <li>{{ link_to_route('about', 'About Us') }}</li>
                 {{--                <li>{{ link_to_route('login', 'Log In') }}</li>--}}
-                {{--                <li>{{ link_to_route('register', 'Register') }}</li>--}}
+                                <li>{{ link_to_route('register', 'Register') }}</li>
             </ul>
         </div>
         <div class="span4 copyright">
