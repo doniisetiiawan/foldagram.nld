@@ -27,7 +27,7 @@
             {{ Form::open( array ( 'url'=>'purchasecredit/addtocredit')) }} <h3>Purchase Credit</h3>
             <br/> {{ Form::token() }} {{ Form::label('qty', 'Foldagrams:') }}
             <br/> {{ Form::label('qty', 'Quantity ') }}
-            {{ Form::text('qty', '1', ['onchange' => 'updatePlanName()']) }}&nbsp;
+            {{ Form::text('qty', '1', ['onkeyUp' => 'updatePlanName()']) }}&nbsp;
             &nbsp; {{ Form::label('price', 'Per Foldagram') }} {{ Form::text('price','', array('id'=>'price', 'readonly'=>'readonly')) }}
             &nbsp;
             &nbsp; {{ Form::label('total', 'Total') }} {{ Form::text('total', '', array('id'=>'total', 'readonly'=>'readonly')) }}
