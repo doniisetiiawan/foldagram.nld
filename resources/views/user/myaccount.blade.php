@@ -51,6 +51,55 @@
                 {{ Form::close() }}
             </div>
 
+            <div class="tab-pane" id="tab3"><h3>My Order</h3>
+                <table class="table table-striped table-bordered table-condensed ">
+                    <thead>
+                    <tr>
+                        <th>Message</th>
+                        <th>Picture</th>
+                        <th>Status</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @if(count($orders) >= 1)
+                        @foreach($orders as $value)
+                            <tr>
+                                <td>{{ $value->message }}</td>
+                                <td>
+                                    @if($value->image!="")
+                                        @if(File::exists(path('public').'img/thumbnails/'.$value->image))
+                                            {{ HTML::image('img/thumbnails/'.$value->image, "Foldagram Image", array('width'=>'100px')) }}
+                                        @endif
+                                    @endif
+                                </td>
+                                <td>
+                                    @if($value->status=='1')
+                                        {!! Form::label('status', $value->status) !!}
+                                    @elseif ($value->status=='2')
+                                        {!! Form::label('status', $value->status) !!}
+                                    @elseif ($value->status=='3')
+                                        {!! Form::label('status', $value->status) !!}
+                                    @elseif ($value->status=='4')
+                                        {!! Form::label('status', $value->status) !!}
+                                    @elseif ($value->status=='5')
+                                        {!! Form::label('status', $value->status) !!}
+                                    @elseif ($value->status=='6')
+                                        {!! Form::label('status', $value->status) !!}
+                                    @elseif ($value->status=='7')
+                                        {!! Form::label('status', $value->status) !!}
+                                    @endif
+                                </td>
+                            </tr>
+                        @endforeach
+                    @else
+                        <tr>
+                            <td colspan="3" class="sr-align-center" style="text-align: center">There is any order</td>
+                        </tr>
+                    @endif
+                    </tbody>
+                </table>
+            </div>
+
         </div>
     </div>
 @stop

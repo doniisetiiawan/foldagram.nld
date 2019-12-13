@@ -11,10 +11,16 @@ class pagesController extends Controller
 {
     public function Myaccount()
     {
+
+        $orders = \DB::table('foldagram')
+            ->where('user_id', '=', \Auth::user()->id)
+            ->get();
+
         return view("user.myaccount")
             ->with("title", "The Foldagram - My Account")
             ->with("page_title", "My Account")
-            ->with('class', 'myaccount');
+            ->with('class', 'myaccount')
+            ->with('orders', $orders);
     }
 
     public function postProfile()
